@@ -38,5 +38,5 @@ ossia il formato user-friendly.
 </table>
 
 ### License
-GNU GPLv3.0
+GNU GPLv3.0<br>
 Read the file LICENSE for more information
