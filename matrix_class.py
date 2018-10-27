@@ -129,7 +129,11 @@ uadrata"
         """Returna la matrice inversa"""
         assert len(self.righe) == len(self.colonne), "La matrice deve essere q\
 uadrata"
-        return self.trasposta() / self.det()
+        try:
+            return self.trasposta() / self.det()
+        except ZeroDivisionError:
+            raise ZeroDivisionError("Il determinante è 0, perciò non è possibi\
+le calcolare la matrice inversa")
 
     @staticmethod
     def uno(lato):
