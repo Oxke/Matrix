@@ -2,7 +2,7 @@
 Questa classe permette di fare calcoli tra **matrici** e trovare il _determinente_, la _matrice inversa_ ecc. di una matrice e di eseguire calcoli con essa e altre.
 <br>
 ### Funzionamento
-Per creare una matrice chiamare Matrix(arg) con come argomento puoi scegliere tra:
+Per creare una matrice chiamare Matrix(arg) dove come argomento puoi scegliere tra:
 <ul>
 <li>Una stringa con colonne separate da ";" e righe da spazi<br>es: "1 2 3; 2 3 4; 3 4 5"</li>
 <li>Una lista o tuple contenente le righe della matrice, e ogni riga composta da tuple o lista contenente i valori<br>es: ((1, 2, 3), (2, 3, 4), (3, 4, 5))</li>
