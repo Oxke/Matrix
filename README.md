@@ -38,5 +38,5 @@ ossia il formato user-friendly.
 </table>
 
 ### License
-CC BY-NC-SA
+GNU GPLv3.0
 Read the file LICENSE for more information
