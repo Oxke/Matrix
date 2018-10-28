@@ -41,7 +41,7 @@ ossia il formato user-friendly.
 
 ### License
 Matrix could be useful to count with Matrix, so to, for example, find the solution of a big system
-Copyright (C) 2018 Oxke
+<br>Copyright (C) 2018 Oxke
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
