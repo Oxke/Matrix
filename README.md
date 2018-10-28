@@ -26,7 +26,7 @@ ossia il formato user-friendly.
 <tr><td>A * B * ...<br>A * 2<br>A / B</td><td><b>Prodotto</b> (e divisione) tra matrici o tra una matrice e un numero</td><tr>
 <tr><td>A.addcolumn(colonna)</td><td><b>Aggiungere</b> una <b>colonna</b> ad A</td></tr>
 <tr><td>A.addrow(riga)</td><td><b>Aggiungere</b> una <b>riga</b> ad A</td></tr>
-<tr><td>A.delcolum(indice)</td><td><b>Eliminare</b> la <b>colonna</b> {indice}</td></tr>
+<tr><td>A.delcolumn(indice)</td><td><b>Eliminare</b> la <b>colonna</b> {indice}</td></tr>
 <tr><td>A.delrow(indice)</td><td><b>Eliminare</b> la <b>riga</b> {indice}</td></tr>
 <tr><td>A.arrotonda([cifre])</td><td>Creare una matrice con ogni numero <b>arrotondato</b> a (di default) due cifre decimali</td></tr>
 <tr><td>A.compl_alg(r, c)</td><td>Ottenere il <b>Complemento algebrico</b> della matrice A in (r, c): A<sub>(r, c)</sub></td></tr>
