@@ -1,15 +1,31 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""Classe Matrice"""
+#
+# Matrix could be useful to count with matrixes and in the solution of systems
+# Copyright (C) 2018 Oxke
+#
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+"""Matrix class"""
 
 __author__ = "Oxke"
 __contact__ = "oseaetobia@gmail.com"
 __copyright__ = "Copyright (C) 2018, Oxke"
 
 __license__ = "GNU GPLv3.0"  # Read the file LICENSE for more information
-__version__ = "v0.3-alpha"
-__date__ = "2018-10-25"
-__maintainer__ = "Oxke"
+__version__ = "v0.3.2.9-alpha"
+__date__ = "2018-10-28"
 
 
 class Matrix:
@@ -221,3 +237,21 @@ diversa lunghezza rispetto alle altre"
 inga, lista o tuple")
         self.righe = tuple(tuple(colonna[i] for colonna in self.colonne)
                            for i in range(len(self.colonne[0])))
+
+    def delcolumn(self, index):
+        """Rimuove una colonna dalla matrice"""
+        cols = self.colonne
+        del cols[index-1]
+        self.colonne = cols
+        self.righe = tuple(tuple(colonna[i] for colonna in self.colonne)
+                           for i in range(len(self.colonne[0])))
+
+    def delrow(self, index):
+        """Rimuove una riga dalla matrice"""
+        rows = self.righe
+        del rows[index-1]
+        self.righe = rows
+        self.colonne = tuple(tuple(riga[i] for riga in self.righe)
+                             for i in range(len(self.righe[0])))
+
+    # TODO: replacerow and replacecolumn
