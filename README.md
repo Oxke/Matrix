@@ -24,10 +24,10 @@ ossia il formato user-friendly.
 <tr><td>str(A)</td><td>Stringa con la matrice A in formato <b>user-friendly</b></td></tr>
 <tr><td>A + B + ...</td><td><b>Somma</b> (e differenza) tra matrici A e B ecc...</td></tr>
 <tr><td>A * B * ...<br>A * 2<br>A / B</td><td><b>Prodotto</b> (e divisione) tra matrici o tra una matrice e un numero</td><tr>
-<tr><td>A.addcolumn(colonna)</td><td>Aggiungere una <b>colonna</b> ad A</td></tr>
-<tr><td>A.addrow(riga)</td><td>Aggiungere una <b>riga</b> ad A</td></tr>
-<tr><td>A.delcolum(indice)</td><td>Eliminare la colonna {indice}</td></tr>
-<tr><td>A.delrow(indice)</td><td>Eliminare la riga {indice}</td></tr>
+<tr><td>A.addcolumn(colonna)</td><td><b>Aggiungere</b> una <b>colonna</b> ad A</td></tr>
+<tr><td>A.addrow(riga)</td><td><b>Aggiungere</b> una <b>riga</b> ad A</td></tr>
+<tr><td>A.delcolum(indice)</td><td><b>Eliminare</b> la <b>colonna</b> {indice}</td></tr>
+<tr><td>A.delrow(indice)</td><td><b>Eliminare</b> la <b>riga</b> {indice}</td></tr>
 <tr><td>A.arrotonda([cifre])</td><td>Creare una matrice con ogni numero <b>arrotondato</b> a (di default) due cifre decimali</td></tr>
 <tr><td>A.compl_alg(r, c)</td><td>Ottenere il <b>Complemento algebrico</b> della matrice A in (r, c): A<sub>(r, c)</sub></td></tr>
 <tr><td>A.min_compl(r, c)</td><td>Ottenere il <b>Minore complementare</b> della matrice A in (r, c): M<sub>(r, c)</sub></td></tr>
