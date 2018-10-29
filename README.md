@@ -28,7 +28,10 @@ ossia il formato user-friendly.
 <tr><td>A.addrow(riga)</td><td>Aggiungere una <b>riga</b> ad A</td></tr>
 <tr><td>A.delcolum(indice)</td><td>Eliminare la colonna {indice}</td></tr>
 <tr><td>A.delrow(indice)</td><td>Eliminare la riga {indice}</td></tr>
+<tr><td>A.replacerow(indice, riga)</td><td>Sostituire una riga con una data</td></tr>
+<tr><td>A.replacecolumn(indice, colonna)</td><td>Sostituire una colonna con una data</td></tr>
 <tr><td>A.arrotonda([cifre])</td><td>Creare una matrice con ogni numero <b>arrotondato</b> a (di default) due cifre decimali</td></tr>
+<tr><td>A.fraziona()</td><td>Crea una matrice con i valori sotto forma di oggetto Fraction e non float o int</td></tr>
 <tr><td>A.compl_alg(r, c)</td><td>Ottenere il <b>Complemento algebrico</b> della matrice A in (r, c): A<sub>(r, c)</sub></td></tr>
 <tr><td>A.min_compl(r, c)</td><td>Ottenere il <b>Minore complementare</b> della matrice A in (r, c): M<sub>(r, c)</sub></td></tr>
 <tr><td>A.det()</td><td>Ottenere il <b>determinante</b> della matrice A</td></tr>

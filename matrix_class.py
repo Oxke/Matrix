@@ -24,8 +24,10 @@ __contact__ = "oseaetobia@gmail.com"
 __copyright__ = "Copyright (C) 2018, Oxke"
 
 __license__ = "GNU GPLv3.0"  # Read the file LICENSE for more information
-__version__ = "v0.3.2.9-alpha"
+__version__ = "v0.3.2.10-alpha"
 __date__ = "2018-10-28"
+
+from fractions import Fraction
 
 
 class Matrix:
@@ -56,9 +58,14 @@ anno la stessa lunghezza"
         return Matrix(tuple(tuple(round(el, cifre) for el in riga)
                             for riga in self.righe))
 
+    def fraziona(self):
+        """Restituisce una matrice con i float come frazioni"""
+        return Matrix(tuple(tuple(Fraction(str(el)) for el in riga)
+                            for riga in self.righe))
+
     def __str__(self):
-        """formato str, bello, con arrotondamento e parentesi quadre"""
-        rnd = self.arrotonda()
+        """formato str, bello, con frazioni e parentesi quadre"""
+        rnd = self.arrotonda(15).fraziona()
         if len(rnd.colonne) == 1:
             stringa = "┎ " + " "*(max([len(str(el[-1]))
                                        for el in rnd.righe])) + " ┒\n"
@@ -254,4 +261,30 @@ inga, lista o tuple")
         self.colonne = tuple(tuple(riga[i] for riga in self.righe)
                              for i in range(len(self.righe[0])))
 
-    # TODO: replacerow and replacecolumn
+    def replacerow(self, index, row):
+        """Sostituisce una riga della matrice con una data"""
+        if isinstance(row, str):
+            row = [int(el) for el in row.strip().split(" ")]
+        elif isinstance(row, (tuple, list)):
+            row = list(row)
+        else:
+            raise TypeError("Tipo non valido: iterable or string accepted")
+        selph = [list(riga) for riga in self.righe]
+        selph[index-1] = row
+        return Matrix(selph)
+
+    def replacecolumn(self, index, column):
+        """Sostituisce una colonna della matrice con una data"""
+        if isinstance(column, str):
+            column = [int(el) for el in column.strip().split(" ")]
+        elif isinstance(column, (tuple, list)):
+            column = list(column)
+        else:
+            raise TypeError("Tipo non valido: iterable or string accepted")
+        selph = [list(colonna) for colonna in self.colonne]
+        assert len(column) == len(selph[0]), "La lunghezza della colonna data \
+è diversa dalle altre"
+        selph[index-1] = column
+        selphrow = tuple(tuple(colonna[i] for colonna in selph)
+                         for i in range(len(selph[0])))
+        return Matrix(selphrow)
