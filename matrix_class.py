@@ -24,7 +24,7 @@ __contact__ = "oseaetobia@gmail.com"
 __copyright__ = "Copyright (C) 2018, Oxke"
 
 __license__ = "GNU GPLv3.0"  # Read the file LICENSE for more information
-__version__ = "v0.3.2.10-alpha"
+__version__ = "v0.3.3"
 __date__ = "2018-10-28"
 
 from fractions import Fraction
