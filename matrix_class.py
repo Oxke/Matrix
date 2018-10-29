@@ -28,6 +28,7 @@ __version__ = "v0.3.2.10-alpha"
 __date__ = "2018-10-28"
 
 from fractions import Fraction
+from random import randrange
 
 
 class Matrix:
@@ -53,6 +54,18 @@ anno la stessa lunghezza"
         self.colonne = tuple(tuple(riga[i] for riga in self.righe) for i in
                              range(len(self.righe[0])))
 
+    @classmethod
+    def rand_mat(cls, squared=False, **kws):
+        """Crea una Matrice casuale"""
+        if squared:
+            lato = kws.get("lato", randrange(1, 8))
+            return Matrix([[randrange(-10, 10) for i in range(lato)]
+                           for j in range(lato)])
+        length_righe = kws.get("columns", randrange(1, 8))
+        righe = kws.get("rows", randrange(1, 8))
+        return Matrix([[randrange(-10, 10) for i in range(length_righe)]
+                       for j in range(righe)])
+
     def arrotonda(self, cifre=2):
         """arrotonda ogni numero della matrice a due cifre decimali"""
         return Matrix(tuple(tuple(round(el, cifre) for el in riga)
@@ -65,7 +78,7 @@ anno la stessa lunghezza"
 
     def __str__(self):
         """formato str, bello, con frazioni e parentesi quadre"""
-        rnd = self.arrotonda(15).fraziona()
+        rnd = self.arrotonda()
         if len(rnd.colonne) == 1:
             stringa = "┎ " + " "*(max([len(str(el[-1]))
                                        for el in rnd.righe])) + " ┒\n"
@@ -86,7 +99,11 @@ anno la stessa lunghezza"
         return stringa
 
     def __repr__(self):
-        return str(self.righe)
+        string = "Matrix("
+        for el_riga in self.righe[:-1]:
+            string += str([round(el, 4) for el in el_riga]) + ",\n       "
+        string += str([round(el, 4) for el in self.righe[-1]]) + ")"
+        return string
 
     def matr_add(self, oth):
         """Ritorna la somma fra due matrici"""
@@ -158,8 +175,8 @@ uadrata"
             raise ZeroDivisionError("Il determinante è 0, perciò non è possibi\
 le calcolare la matrice inversa")
 
-    @staticmethod
-    def uno(lato):
+    @classmethod
+    def uno(cls, lato):
         """Crea matrice UNITA' dato il lato"""
         righe = []
         for i in range(lato):
@@ -172,8 +189,8 @@ le calcolare la matrice inversa")
             righe.append(riga)
         return Matrix(righe)
 
-    @staticmethod
-    def zero(lato):
+    @classmethod
+    def zero(cls, lato):
         """Crea matrice NULLA dato il lato"""
         return Matrix(tuple(tuple(0 for i in range(lato))
                             for i in range(lato)))

@@ -40,6 +40,7 @@ ossia il formato user-friendly.
 <tr><td>A.trasposta()</td><td>Ottenere la matrice <b>trasposta</b> della matrice dei complementi algebrici</td></tr>
 <tr><td>Matrix.zero(lato)</td><td>Creare una matrice <b>nulla</b> di lato dato (static method)</td></tr>
 <tr><td>Matrix.uno(lato)</td><td>Creare una matrice <b>unità</b> di lato dato (static method)</td></tr>
+<tr><td>Matrix.rand_mat(sqeared=1)</td><td>Creare una matrice casuale potendo specificare se si vuole una matrice quadrata, e specificando le righe, colonne o lato ("rows", "columns", "lato")
 </table>
 
 ### License
