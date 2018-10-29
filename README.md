@@ -24,19 +24,12 @@ ossia il formato user-friendly.
 <tr><td>str(A)</td><td>Stringa con la matrice A in formato <b>user-friendly</b></td></tr>
 <tr><td>A + B + ...</td><td><b>Somma</b> (e differenza) tra matrici A e B ecc...</td></tr>
 <tr><td>A * B * ...<br>A * 2<br>A / B</td><td><b>Prodotto</b> (e divisione) tra matrici o tra una matrice e un numero</td><tr>
-<<<<<<< HEAD
 <tr><td>A.addcolumn(colonna)</td><td>Aggiungere una <b>colonna</b> ad A</td></tr>
 <tr><td>A.addrow(riga)</td><td>Aggiungere una <b>riga</b> ad A</td></tr>
 <tr><td>A.delcolum(indice)</td><td>Eliminare la colonna {indice}</td></tr>
 <tr><td>A.delrow(indice)</td><td>Eliminare la riga {indice}</td></tr>
 <tr><td>A.replacerow(indice, riga)</td><td>Sostituire una riga con una data</td></tr>
 <tr><td>A.replacecolumn(indice, colonna)</td><td>Sostituire una colonna con una data</td></tr>
-=======
-<tr><td>A.addcolumn(colonna)</td><td><b>Aggiungere</b> una <b>colonna</b> ad A</td></tr>
-<tr><td>A.addrow(riga)</td><td><b>Aggiungere</b> una <b>riga</b> ad A</td></tr>
-<tr><td>A.delcolumn(indice)</td><td><b>Eliminare</b> la <b>colonna</b> {indice}</td></tr>
-<tr><td>A.delrow(indice)</td><td><b>Eliminare</b> la <b>riga</b> {indice}</td></tr>
->>>>>>> 6b72ceb8a593dae7557d3f6d3519c613a3bace9f
 <tr><td>A.arrotonda([cifre])</td><td>Creare una matrice con ogni numero <b>arrotondato</b> a (di default) due cifre decimali</td></tr>
 <tr><td>A.fraziona()</td><td>Crea una matrice con i valori sotto forma di oggetto Fraction e non float o int</td></tr>
 <tr><td>A.compl_alg(r, c)</td><td>Ottenere il <b>Complemento algebrico</b> della matrice A in (r, c): A<sub>(r, c)</sub></td></tr>
