@@ -76,7 +76,7 @@ anno la stessa lunghezza"
         return Matrix(tuple(tuple(Fraction(str(el)) for el in riga)
                             for riga in self.righe))
 
-    def fracround(self, maxcifre=7):
+    def fracround(self, maxcifre=6):
         """Arrotonda il float della divisione se la frazione è più lunga di n \
 caratteri, altrimenti scrive la frazione"""
         righe = []
