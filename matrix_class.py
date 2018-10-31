@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 #
-# Matrix could be useful to count with matrixes and in the solution of systems
+# Matrix could be useful to count with matrices and in the solution of systems
 # Copyright (C) 2018 Oxke
 #
 # This program is free software: you can redistribute it and/or modify

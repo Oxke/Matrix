@@ -45,7 +45,7 @@ ossia il formato user-friendly.
 </table>
 
 ### License
-Matrix could be useful to count with Matrix so, for example, to find the solution of a big system
+Matrix could be useful to count with matrices so, for example, to find the solution of a big system
 <br>Copyright (C) 2018 Oxke
 
 This program is free software: you can redistribute it and/or modify
