@@ -24,14 +24,14 @@ __contact__ = "oseaetobia@gmail.com"
 __copyright__ = "Copyright (C) 2018, Oxke"
 
 __license__ = "GNU GPLv3.0"  # Read the file LICENSE for more information
-__version__ = "v0.3.3"
+__version__ = "v0.4"
 __date__ = "2018-10-28"
 
 from fractions import Fraction
 from random import randrange
 
 
-class Matrix:
+class Matrix:  # pylint: disable=R0904
     """Crea ed esegue operazioni tra matrici"""
 
     def __init__(self, righe):
@@ -76,33 +76,60 @@ anno la stessa lunghezza"
         return Matrix(tuple(tuple(Fraction(str(el)) for el in riga)
                             for riga in self.righe))
 
+    def fracround(self, maxcifre=7):
+        """Arrotonda il float della divisione se la frazione è più lunga di n \
+caratteri, altrimenti scrive la frazione"""
+        righe = []
+        for riga in self.righe:
+            row = []
+            for el_riga in riga:
+                if int(el_riga) == el_riga:
+                    row.append(int(el_riga))
+                elif isinstance(el_riga, Fraction):
+                    if len(str(el_riga)) <= maxcifre:
+                        row.append(el_riga)
+                    else:
+                        row.append(round(float(el_riga), maxcifre - 1 -
+                                         len(str(int(el_riga)))))
+                else:
+                    row.append(round(el_riga, maxcifre - 1 -
+                                     len(str(int(el_riga)))))
+            righe.append(row)
+        return Matrix(righe)
+
     def __str__(self):
         """formato str, bello, con frazioni e parentesi quadre"""
-        rnd = self.arrotonda()
+        rnd = self.fracround()
         if len(rnd.colonne) == 1:
-            stringa = "┎ " + " "*(max([len(str(el[-1]))
-                                       for el in rnd.righe])) + " ┒\n"
+            stringa = "      ┎ " + " "*(max([len(str(el[-1]))
+                                             for el in rnd.righe])) + " ┒\n"
         else:
-            stringa = "┎" + "\t"*(len(rnd.colonne)-1) + " "*(max(
+            stringa = "      ┎ " + "\t"*(len(rnd.colonne)-1) + " "*(max(
                 [len(str(el[-1])) for el in rnd.righe])) + " ┒\n"
         for el_riga in rnd.righe:
-            stringa += "┃ " + "\t".join(tuple(str(el) for el in el_riga))
+            stringa += "      ┃ " + "\t".join(tuple(str(el) for el in el_riga))
             stringa += " "*(max([len(str(el[-1])) for el in rnd.righe]) -
                             len(str(el_riga[-1])))
             stringa += " ┃\n"
         if len(rnd.colonne) == 1:
-            stringa += "┖ " + " "*(max([len(str(el[-1]))
-                                        for el in rnd.righe]) + 1) + "┚"
+            stringa += "      ┖ " + " "*(max([len(str(el[-1]))
+                                              for el in rnd.righe]) + 1) + "┚"
         else:
-            stringa += "┖" + "\t"*(len(rnd.colonne) - 1) + " "*(max(
+            stringa += "      ┖ " + "\t"*(len(rnd.colonne)-1) + " "*(max(
                 [len(str(el[-1])) for el in rnd.righe])) + " ┚"
         return stringa
 
+    def float(self):
+        """Ogni numero in formato float"""
+        return Matrix([[round(float(el), 3) for el in riga]
+                       for riga in self.righe])
+
     def __repr__(self):
         string = "Matrix("
-        for el_riga in self.righe[:-1]:
+        selph = self.float()
+        for el_riga in selph.righe[:-1]:
             string += str([round(el, 4) for el in el_riga]) + ",\n       "
-        string += str([round(el, 4) for el in self.righe[-1]]) + ")"
+        string += str([round(el, 4) for el in selph.righe[-1]]) + ")"
         return string
 
     def matr_add(self, oth):
@@ -197,7 +224,7 @@ le calcolare la matrice inversa")
 
     def matr_mul(self, b_matr):
         """Moltiplicazione fra 2 matrici"""
-        if isinstance(b_matr, (int, float)):
+        if isinstance(b_matr, (int, float, Fraction)):
             return Matrix(tuple(tuple(el*b_matr for el in riga)
                                 for riga in self.righe))
         assert len(self.colonne) == len(b_matr.righe), "Il numero di colonne d\
@@ -222,8 +249,8 @@ ella prima matrice deve essere uguale al numero di righe della seconda"
 
     def __truediv__(self, other):
         """Divide, o meglio moltiplica per l'inverso"""
-        if isinstance(other, (int, float)):
-            return self * (1/other)
+        if isinstance(other, (int, float, Fraction)):
+            return self * Fraction(1, other)
         return self * other.inversa()
 
     def addrow(self, riga):

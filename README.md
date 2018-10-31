@@ -32,6 +32,7 @@ ossia il formato user-friendly.
 <tr><td>A.replacecolumn(indice, colonna)</td><td>Sostituire una colonna con una data</td></tr>
 <tr><td>A.arrotonda([cifre])</td><td>Creare una matrice con ogni numero <b>arrotondato</b> a (di default) due cifre decimali</td></tr>
 <tr><td>A.fraziona()</td><td>Crea una matrice con i valori sotto forma di oggetto Fraction e non float o int</td></tr>
+<tr><td>A.fracround([maxcifre])</td><td>Crea una matrice con ogni valore in frazione se la lunghezza in caratteri della frazione è minore di maxcifre, o in float arrotondato in modo che risultino maxcifre cifre. Di default il valore maxcifre  a 7</td></tr>
 <tr><td>A.compl_alg(r, c)</td><td>Ottenere il <b>Complemento algebrico</b> della matrice A in (r, c): A<sub>(r, c)</sub></td></tr>
 <tr><td>A.min_compl(r, c)</td><td>Ottenere il <b>Minore complementare</b> della matrice A in (r, c): M<sub>(r, c)</sub></td></tr>
 <tr><td>A.det()</td><td>Ottenere il <b>determinante</b> della matrice A</td></tr>
