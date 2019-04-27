@@ -1,3 +1,4 @@
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2FOxke%2FMatrix.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2FOxke%2FMatrix?ref=badge_shield)
 # Matrix_class
 Questa classe permette di fare calcoli tra **matrici** e trovare il _determinente_, la _matrice inversa_ ecc. di una matrice e di eseguire calcoli con essa e altre.
 <br>
