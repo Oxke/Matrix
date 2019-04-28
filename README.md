@@ -1,5 +1,5 @@
 # Matrix_class
-[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2FOxke%2FMatrix.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2FOxke%2FMatrix?ref=badge_shield)
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2FOxke%2FMatrix.svg?type=small)](https://app.fossa.io/projects/git%2Bgithub.com%2FOxke%2FMatrix?ref=badge_small)
 
 Questa classe permette di fare calcoli tra **matrici** e trovare il _determinente_, la _matrice inversa_ ecc. di una matrice e di eseguire calcoli con essa e altre.
 <br>
